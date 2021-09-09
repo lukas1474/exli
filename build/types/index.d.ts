@@ -12,9 +12,4 @@
  * Kod powinien posiadać pełen zestaw testów (Jest).
  * Kod może posiadać komentarze.
  */
-
-import { getCountries } from "./countries";
-
-window.addEventListener("load", () => {
-  getCountries();
-});
+export {};
