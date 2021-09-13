@@ -89,5 +89,8 @@
       "jsx",
       "node"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.21.4"
   }
 }
