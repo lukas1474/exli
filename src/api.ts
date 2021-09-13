@@ -1,7 +1,7 @@
-const url='https://restcountries.eu/rest/v2/all'
+import { API_URL } from "./config";
 
 export const getData = () => {
-  fetch(url)
+  fetch(API_URL)
   .then(res => res.json())
   .then(data => localStorage.setItem('countries', JSON.stringify(data)))
   
