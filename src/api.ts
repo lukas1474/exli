@@ -3,13 +3,21 @@ const url='https://restcountries.eu/rest/v2/all'
 export const getData = () => {
   fetch(url)
   .then(res => res.json())
-  .then(data => localStorage.setItem('countries', data))
+  .then(data => localStorage.setItem('countries', JSON.stringify(data)))
+  
+  const fetchTime = new Date().getTime().toString();
+  localStorage.setItem('lastFetchTime', fetchTime)
 };
 
-const time = 12341231231223;
+// console.log( 'kraje', localStorage.countries)
 
-console.log(time)
+export const checkLocalStorage = () => {
+  const nextFetch = new Date().getTime();
+  const lastFetch = localStorage.lastFetchTime;
+  const diff = Math.floor((nextFetch - lastFetch)/1000/60/60/24)
+  const week = 7;
 
-
-// localStorage.setItem('kraje', kraje)
-// .then(data => console.log(data))
+  if (!localStorage.countries || diff >= week) {
+    getData()
+  }
+}
