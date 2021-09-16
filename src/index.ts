@@ -13,7 +13,7 @@
  * Kod może posiadać komentarze.
  */
 
-import { getCountries } from "./countries";
+import { getCountries } from "./Countries";
 
 window.addEventListener("load", () => {
   getCountries();

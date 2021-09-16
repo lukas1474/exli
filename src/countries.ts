@@ -1,4 +1,4 @@
-import { getData, checkLocalStorage} from "./api";
+import { getData, checkLocalStorage } from "./api";
 
 export const getCountries = () => {
   checkLocalStorage();
