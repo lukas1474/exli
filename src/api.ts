@@ -1,18 +1,5 @@
 import { API_URL } from "./config";
 
-export async function getData() {
-  const cos = await fetch(API_URL)
-  localStorage.setItem('countries', JSON.stringify(cos.json()));
-  // .then((res: { json: () => any; }) => res.json())
-  // .then((data: any) => localStorage.setItem('countries', JSON.stringify(data)))
-  
-  const fetchTime: string = new Date().getTime().toString();
-  localStorage.setItem('lastFetchTime', fetchTime)
-  
-}
-
-// console.log( 'kraje', localStorage.countries)
-
 export const checkLocalStorage = (): void => {
   const nextFetch: number = new Date().getTime();
   const lastFetch: string = localStorage.getItem('lastFetchTime');
@@ -20,6 +7,17 @@ export const checkLocalStorage = (): void => {
   const week= 7;
 
   if (!localStorage.getItem('countries') || diff >= week) {
-    getData()
+    getDataToLocalStorage()
   }
 }
+
+export const getDataToLocalStorage = async () => {
+  await fetch(API_URL)
+  .then((res: { json: () => any; }) => res.json())
+  .then((data: any) => localStorage.setItem('countries', JSON.stringify(data)))
+  
+  const fetchTime: string = new Date().getTime().toString();
+  localStorage.setItem('lastFetchTime', fetchTime)
+};
+
+// console.log( 'kraje', localStorage.countries)

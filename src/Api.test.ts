@@ -1,7 +1,27 @@
 import fetchMock from 'jest-fetch-mock';
-import {getData} from './api';
+import {getDataToLocalStorage} from './api';
 import { API_URL } from 
 "./config";
+
+
+it('Should fetch all countries', () => {
+  getDataToLocalStorage();
+  expect(fetch).toHaveBeenCalledWith(API_URL)
+});
+
+test('should save to localStorage', async () => {
+  // const KEY = 'foo',
+  //   VALUE = 'bar';
+    getDataToLocalStorage();
+    fetchMock.mockResponse('string')
+  await expect(localStorage.setItem).toHaveBeenLastCalledWith('countries', 'string');
+  // await expect(localStorage.setItem).toHaveBeenLastCalledWith('lastFetchTime', 'string');
+  // expect(localStorage.__STORE__[KEY]).toBe(VALUE);
+  // expect(Object.keys(localStorage.__STORE__).length).toBe(1);
+});
+
+
+
 
 // const unmockedFetch = global.fetch
 
@@ -33,19 +53,6 @@ import { API_URL } from
 //     expect(getData(localStorageNoData).toBe(false))
 //   })
 // })
-
-
-test('should save to localStorage', async () => {
-  // const KEY = 'foo',
-  //   VALUE = 'bar';
-    getData();
-    fetchMock.mockResponse('string')
-  await expect(localStorage.setItem).toHaveBeenLastCalledWith('countries', 'string');
-  // expect(localStorage.__STORE__[KEY]).toBe(VALUE);
-  // expect(Object.keys(localStorage.__STORE__).length).toBe(1);
-});
-
-
 
 // it('Should fetch all countiries', () => {
 //   getData();
@@ -98,20 +105,11 @@ test('should save to localStorage', async () => {
 //   localStorageMock.setItem(localStorageId, JSON.stringify(dataCountries));
 // });
 
-
 // function setItem(jsonId: string, newJson: { data: string; }) {
 //   throw new Error('Function not implemented.');
 // }
 // global.fetch = jest.fn(() => Promise.resolve(true))
 
-it('Should fetch all countries', () => {
-  getData();
-  expect(fetch).toHaveBeenCalledWith(API_URL)
-});
-
-
-
 // function setItem(jsonId: string, newJson: { data: string; }) {
 //   throw new Error('Function not implemented.');
 // }
-
