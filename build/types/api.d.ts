@@ -1,1 +1,2 @@
-export declare const getData: (url?: string) => void;
+export declare const getData: () => void;
+export declare const checkLocalStorage: () => void;
