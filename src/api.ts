@@ -1,3 +1,4 @@
+import { compareCountries } from "./CompareCountries";
 import { API_URL } from "./config";
 
 export const checkLocalStorage = (): void => {
@@ -7,7 +8,8 @@ export const checkLocalStorage = (): void => {
   const week= 7;
 
   if (!localStorage.getItem('countries') || diff >= week) {
-    getDataToLocalStorage()
+    compareCountries();
+    getDataToLocalStorage();
   }
 }
 

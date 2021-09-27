@@ -1,5 +1,7 @@
-import { checkLocalStorage } from "./api";
+import { checkLocalStorage } from "./Api";
+import { compareCountries } from "./CompareCountries";
 
 export const getCountries = () => {
+  compareCountries();
   checkLocalStorage();
 };

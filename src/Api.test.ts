@@ -1,5 +1,5 @@
 import fetchMock from 'jest-fetch-mock';
-import {getDataToLocalStorage} from './api';
+import {getDataToLocalStorage} from './Api';
 import { API_URL } from 
 "./config";
 
