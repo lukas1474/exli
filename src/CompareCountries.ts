@@ -5,13 +5,8 @@ export const compareCountries = async () => {
   const currentCountries: any = await data.json()
   const localStorageCountries: any = JSON.parse(localStorage.getItem('countries'));
   
-  console.log('zapisane', localStorageCountries)
-  console.log('pobierane', currentCountries)
-
-  // const results: any = currentCountries.filter(
-    // (item: { name: string; population: string }) => localStorageCountries.some(
-    //   (old: { name: string; population: string }) => item.name === old.name && item.population !== old.population)
-  // )
+  // console.log('zapisane', localStorageCountries)
+  // console.log('pobierane', currentCountries)
 
   const lista: any[] = [];
   for(let i = 0; i < currentCountries.length; i++){
@@ -20,5 +15,5 @@ export const compareCountries = async () => {
     }
   }
 
-  console.log(lista)
+  // console.log(lista)
 }
