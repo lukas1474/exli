@@ -1,4 +1,4 @@
-/**
+/** Zadanie 1:
  * Ściągnij wszystkie możliwe dane państw z pomocą API: https://restcountries.eu/. W dalszej części kursu będą one nazywane Tablicą Państw (TP).
  * Ściągnięte dane zapisz w sposób, który pozwoli na ich ponowne wykorzystanie po zamknięciu i ponownym otwarciu przeglądarki,
  * Przy starcie aplikacji sprawdź, czy dane państw istnieją w pamięci przeglądarki.

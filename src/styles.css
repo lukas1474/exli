@@ -5,3 +5,7 @@
 .task_header {
   color: grey;
 }
+
+.finish_task {
+  color: greenyellow;
+}

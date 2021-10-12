@@ -1,9 +1,9 @@
 import { compareCountries } from "./CompareCountries";
-import { API_URL } from "./config";
+import { API_URL } from "../config";
 
 export const checkLocalStorage = (): void => {
   const nextFetch: number = new Date().getTime();
-  const lastFetch: string = localStorage.getItem('lastFetchTime');
+  const lastFetch = localStorage.getItem('lastFetchTime');
   const diff: number = Math.floor((nextFetch - (+lastFetch))/1000/60/60/24)
   const week= 7;
 
@@ -21,5 +21,3 @@ export const getDataToLocalStorage = async () => {
   const fetchTime: string = new Date().getTime().toString();
   localStorage.setItem('lastFetchTime', fetchTime)
 };
-
-// console.log( 'kraje', localStorage.countries)
