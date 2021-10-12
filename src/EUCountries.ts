@@ -8,7 +8,8 @@ interface country{
 }
 
 export const filterEUCountries = (): void => {
-  const localStorageCountries = JSON.parse(localStorage.getItem('countries'));
+  const countryList= localStorage.getItem('countries');
+  const localStorageCountries = countryList ? JSON.parse(countryList) : [];
   const countriesArray: country[] = localStorageCountries;
 
   const euFilterCountries: country[] = countriesArray.filter(
@@ -33,8 +34,8 @@ export const filterEUCountries = (): void => {
     ) 
   }
 
-  console.log('do filtrowania', countriesArray)
+  console.log('do filtrowania', countriesArray);
   console.log('EU', euFilterCountries);
   console.log('EU bez a', euFilterCountriesNoA);
   console.log('suma', sumaCountry);
-}
+};
