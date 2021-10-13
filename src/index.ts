@@ -13,7 +13,7 @@
  * Kod może posiadać komentarze.
  */
 
- /**Zadanie 2:
+/**Zadanie 2:
  * Z Tablicy Państw z zadania 1 przefiltruj wszystkie należące do Unii Europejskiej.
  * Z uzyskanej w ten sposób tablicy usuń wszystkie państwa posiadające w swojej nazwie literę a.
  * Z uzyskanej w ten sposób tablicy posortuj państwa według populacji, tak by najgęściej zaludnione znajdowały się na górze listy. 
@@ -24,8 +24,23 @@
  * Kod może posiadać komentarze.
  */
 
-import { getCountries } from "./Countries";
+import { API_URL } from "./config";
+
+import { checkLocalStorage } from "./LocalStorageManagment";
+import { compareCountries } from "./CompareCountries";
+import { calculatePopulation } from "./CalculatePopulation";
 
 window.addEventListener("load", () => {
   getCountries();
 });
+
+export const getCountries = () => {
+  compareCountries();
+  checkLocalStorage();
+  calculatePopulation();
+};
+
+export const fetchCountries = async () => {
+  const data = await fetch(API_URL)
+  return data.json()
+}

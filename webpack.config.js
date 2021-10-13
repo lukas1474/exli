@@ -80,7 +80,7 @@ module.exports = {
   plugins: [
     new PrettierPlugin(),
     new MiniCssExtractPlugin({
-        filename: 'src/styles.css'
+        filename: 'src/style.css'
     }),
     new webpack.BannerPlugin(banner)
   ],

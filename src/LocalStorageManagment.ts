@@ -1,10 +1,10 @@
 import { compareCountries } from "./CompareCountries";
-import { API_URL } from "./config";
+import { fetchCountries } from "./index";
 
 export const checkLocalStorage = (): void => {
   const nextFetch: number = new Date().getTime();
   const time = localStorage.getItem('lastFetchTime');
-  const lastFetch: number = time ? JSON.parse(time) : 0 ;
+  const lastFetch: number = time ? JSON.parse(time) : 0;
   const diff: number = Math.floor((nextFetch - lastFetch)/1000/60/60/24)
   const week= 7;
 
@@ -14,11 +14,10 @@ export const checkLocalStorage = (): void => {
   }
 };
 
-export const getDataToLocalStorage = async () => {
-  await fetch(API_URL)
-  .then((res: { json: () => any; }) => res.json())
-  .then((data: any) => localStorage.setItem('countries', JSON.stringify(data)))
-  
+export const getDataToLocalStorage = async () => {  
+  const fetchToLocalStorage = await fetchCountries();
+  localStorage.setItem('countries', JSON.stringify(fetchToLocalStorage));
+
   const fetchTime: string = new Date().getTime().toString();
   localStorage.setItem('lastFetchTime', fetchTime)
 };

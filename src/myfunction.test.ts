@@ -1,4 +1,4 @@
-import { myfunction } from '../src/myfunction';
+import { myfunction } from './myfunction';
 
 it('Runs without crashing', () => {
   myfunction();
