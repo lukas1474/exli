@@ -1,9 +1,8 @@
-import { fetchCountries } from "./index";
-
+import { fetchCountries } from './index';
 
 export const compareCountries = async () => {
   const currentCountries = await fetchCountries();
-  const countryList = localStorage.getItem("countries");
+  const countryList = localStorage.getItem('countries');
   const localStorageCountries = countryList ? JSON.parse(countryList) : [];
 
   const changePopulationCountryList = [];

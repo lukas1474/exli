@@ -24,13 +24,13 @@
  * Kod może posiadać komentarze.
  */
 
-import { API_URL } from "./config";
+import { API_URL } from './config';
 
-import { checkLocalStorage } from "./LocalStorageManagment";
-import { compareCountries } from "./CompareCountries";
-import { calculatePopulation } from "./CalculatePopulation";
+import { checkLocalStorage } from './LocalStorageManagement';
+import { compareCountries } from './CompareCountries';
+import { calculatePopulation } from './CalculatePopulation';
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   getCountries();
 });
 
