@@ -13,6 +13,6 @@
     "moduleResolution": "node",
     "strict": true
   },
-  "include": ["./src/**/*", "tests/", "src/myfunction.ts", "src/index.ts", "src/Countries.ts", "src/CompareCountries.ts", "src/EUCountries.ts", "src/Api.ts", "config.js", "config.js"],
+  "include": ["./src/**/*", "tests/", "src/Myfunction.ts", "src/index.ts", "src/Countries.ts", "src/CompareCountries.ts", "src/EUCountries.ts", "src/Api.ts", "config.js", "config.js"],
   "exclude": ["tests/"],
 }

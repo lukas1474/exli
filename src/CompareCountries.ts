@@ -1,4 +1,5 @@
-import { fetchCountries } from './index';
+import { fetchCountries } from "./index";
+
 
 export const compareCountries = async () => {
   const currentCountries = await fetchCountries();

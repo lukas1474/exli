@@ -12,4 +12,5 @@
  * Kod powinien posiadać pełen zestaw testów (Jest).
  * Kod może posiadać komentarze.
  */
-export {};
+export declare const getCountries: () => void;
+export declare const fetchCountries: () => Promise<any>;

@@ -9,16 +9,20 @@ it('Should fetch all countries', () => {
   expect(fetch).toHaveBeenCalledWith(API_URL)
 });
 
-test('should save to localStorage', async () => {
-  // const KEY = 'foo',
-  //   VALUE = 'bar';
-    getDataToLocalStorage();
-    fetchMock.mockResponse('string')
-  await expect(localStorage.setItem).toHaveBeenLastCalledWith('countries', 'string');
-  // await expect(localStorage.setItem).toHaveBeenLastCalledWith('lastFetchTime', 'string');
-  // expect(localStorage.__STORE__[KEY]).toBe(VALUE);
-  // expect(Object.keys(localStorage.__STORE__).length).toBe(1);
-});
+// it('Runs without crashing', () => {
+//   getDataToLocalStorage();
+// });
+
+// test('should save to localStorage', async () => {
+//   // const KEY = 'foo',
+//   //   VALUE = 'bar';
+//     getDataToLocalStorage();
+//     fetchMock.mockResponse('string')
+//   await expect(localStorage.setItem).toHaveBeenLastCalledWith('countries', 'string');
+//   // await expect(localStorage.setItem).toHaveBeenLastCalledWith('lastFetchTime', 'string');
+//   // expect(localStorage.__STORE__[KEY]).toBe(VALUE);
+//   // expect(Object.keys(localStorage.__STORE__).length).toBe(1);
+// });
 
 
 
