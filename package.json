@@ -103,7 +103,7 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.15.0",
     "axios": "^0.21.4",
-    "jest-environment-jsdom": "^27.2.5",
+    "jest-environment-jsdom": "^28.1.1",
     "jest-fetch-mock": "^3.0.3",
     "node-fetch": "^3.0.0"
   }
